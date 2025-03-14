@@ -1,10 +1,23 @@
 #include <iostream>
+#include <iomanip>
+#include <string>
 using namespace std;
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int main(int argc, char** argv) 
+int main() 
 {
-	cout << "welcome to github";
+	string user, pass;
+	
+	cout << setw(50) << setfill('=') << "=" << "Welcome to ShoeShoop" << setw(50) << "=" << endl << endl;
+	cout << setw(50) << setfill(' ') << " " << "**Profile Creation**" << endl;
+	cout << setw(50) << " " << "--------------------" << endl;
+	cout << setw(50) << " " << "Username : ";
+	getline(cin,user);
+	cout << setw(50) << " " << "Password : ";
+	getline(cin,pass);
+	
+	
+
 	return 0;
 }
