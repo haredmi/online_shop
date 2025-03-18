@@ -9,6 +9,7 @@ int main()
 {
 	string user, pass;
 	
+	cout << "tofik";
 	cout << setw(50) << setfill('=') << "=" << "Welcome." << setw(50) << "=" << endl << endl;
 	cout << setw(50) << setfill(' ') << " " << "**Profile Creation**" << endl;
 	cout << setw(50) << " " << "--------------------" << endl;
