@@ -17,7 +17,7 @@ int main()
 	getline(cin,user);
 	cout << setw(50) << " " << "Password : ";
 	getline(cin,pass);
-	
+	cout << "ipancem";
 	
 
 	return 0;
