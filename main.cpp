@@ -6,6 +6,10 @@ using namespace std;
 void catalog()
 {
 	string  brand, adidasSho;
+	
+	//product display
+	cout << endl;
+	cout << "What brand are you looking for?" << endl;
 	cout << " \nEnter brand of shoes (Adidas, Nike, Asics, NewBalance, Puma): ";
 	getline (cin,brand);
 	cin.ignore();
@@ -89,48 +93,68 @@ void catalog()
 
 void decision()
 {
-	int ASB[5], i;
-	int AmountASB1, AmountASB2, AmountASB3, AmountASB4, AmountASB5;
+	int ASB[5] = {0}, i, stockASB[5] = {1,1,1,1,1}, temporary;
 	char decision;
 	string code;
 	
-	cout << "Enter code (S to continue to next catalog) : ";
+	cout << "Enter code (\'S\' if you did not interested) : ";
 	getline (cin, code);
+	
+	while (code != "ASB1" && code != "ASB2" && code != "ASB3" && code != "ASB4" && code != "ASB5" && code != "s" && code != "S")
+	{
+		cout << "No such code exist! Please re-enter : ";
+		getline (cin, code);
+	}
 	
 	if (code == "ASB1")
 	{
-		cout << "How many pieces you want?";
-		cin >> AmountASB1;
-		
 		for (i = 0; i < 5; i++)
 		{
 			if (i != 0)
 			{
 				continue;
 			}
-			ASB[i] = AmountASB1;
+			
+			if (stockASB[i] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ASB[i] = temporary;
+				ASB[i] = stockASB[i];
+				stockASB[i] = temporary;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+			}
+			
 		}
-		
+	
 	}
 	else if (code == "ASB2")
-	{
-		cout << "How many pieces you want?";
-		cin >> AmountASB2;
-		
+	{	
 		for (i = 0; i < 5; i++)
 		{
 			if (i != 1)
 			{
 				continue;
 			}
-			ASB[i] = AmountASB2;
+			
+			if (stockASB[i] == 1)
+			{
+				ASB[i] = temporary;
+				ASB[i] = stockASB[i];
+				stockASB[i] = temporary;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+			}
+			else
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
 		}
 		
 	}
 	else if (code == "ASB3")
 	{
-		cout << "How many pieces you want?";
-		cin >> AmountASB3;
 		
 		for (i = 0; i < 5; i++)
 		{
@@ -138,43 +162,78 @@ void decision()
 			{
 				continue;
 			}
-			ASB[i] = AmountASB3;
+			
+			if (stockASB[i] == 1)
+			{
+				ASB[i] = temporary;
+				ASB[i] = stockASB[i];
+				stockASB[i] = temporary;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+			}
+			else
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
 		}
 		
 	}
 	else if (code == "ASB4")
 	{
-		cout << "How many pieces you want?";
-		cin >> AmountASB4;
-		
+	
 		for (i = 0; i < 5; i++)
 		{
 			if (i != 3)
 			{
 				continue;
 			}
-			ASB[i] = AmountASB4;
+			
+			if (stockASB[i] == 1)
+			{
+				ASB[i] = temporary;
+				ASB[i] = stockASB[i];
+				stockASB[i] = temporary;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+			}
+			else
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
 		}
 		
 	}
 	else if (code == "ASB5")
 	{
-		cout << "How many pieces you want?";
-		cin >> AmountASB5;
-		
+			
 		for (i = 0; i < 5; i++)
 		{
 			if (i != 4)
 			{
 				continue;
 			}
-			ASB[i] = AmountASB5;
+			
+			if (stockASB[i] == 1)
+			{
+				ASB[i] = temporary;
+				ASB[i] = stockASB[i];
+				stockASB[i] = temporary;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+			}
+			else
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
 		}
 		
 	}
 	else
 	{
-		cout << "error";
+		cout << "No item added to cart. " << endl << endl << endl << endl;
+	}
+	
+	for (int i = 0; i < 5; i++)
+	{
+		cout << "ordered [" << i+1 << "] : " << ASB[i] << endl;
+		cout << "Stock [" << i+1 << "] : " << stockASB[i] << endl << endl;
 	}
 	
 }
@@ -182,7 +241,8 @@ void decision()
 int main() 
 {
 	string user, pass;
-	int shoeAmount;
+	char stop;
+	int i;
 	
 	cout << setw(50) << setfill('=') << "=" << "Welcome to Harith's shop." << setw(50) << "=" << endl << endl;
 	cout << setw(50) << setfill(' ') << " " << "**Profile Creation**" << endl;
@@ -193,18 +253,30 @@ int main()
 	getline(cin,pass);
 	//greeting
 	cout << setfill ('-') << setw (100) << "-" << endl;
-	cout << "\t\t\t\tWELCOME TO OUR CATALOG BRANDED SHOES!" << endl;
+	cout << "\t\t\t\tWELCOME " << user << " TO OUR CATALOG BRANDED SHOES!" << endl;
 	cout << setfill ('-') << setw (100) << "-";
-
-	//varieable declaration
-	string  brand, adidasSho, code;
 	
-	//product display
-	cout << endl;
-	cout << "How many shoe you want to buy? : ";
-	cin >> shoeAmount;
-	cout << "What brand are you looking for?" << endl;
-	catalog();
+	
+	while (stop != 'Y' && stop != 'y')
+	{
+		while (i < 20)
+		{
+			cout << endl;
+			i++;
+		}
+		catalog();
+		decision();
+		cout << "Do you want to proceed to checkout or continue browsing? (Y-yes / N-no) : ";
+		cin >> stop;
+		cin.ignore();
+	}
+	
+	
+	
+	
+	
+	
+
 //		else
 //		{
 //			
