@@ -1,7 +1,12 @@
 #include <iostream>
+#include <cstdlib>
 #include <iomanip>
 #include <string>
 using namespace std;
+
+int ASB[5] = {0}, stockASB[5] = {1,1,1,1,1}, temporary;
+string cart[30];
+int i = 0;
 
 void catalog()
 {
@@ -346,7 +351,6 @@ void catalog()
 
 void decision()
 {
-	int ASB[5] = {0}, i, stockASB[5] = {1,1,1,1,1}, temporary;
 	char decision;
 	string code;
 	
@@ -361,127 +365,89 @@ void decision()
 	
 	if (code == "ASB1")
 	{
-		for (i = 0; i < 5; i++)
-		{
-			if (i != 0)
-			{
-				continue;
-			}
 			
-			if (stockASB[i] == 0)
+			if (stockASB[0] == 0)
 			{
 				cout << "Out of stock :( " << endl << endl << endl << endl;
 			}
 			else
 			{
-				ASB[i] = temporary;
-				ASB[i] = stockASB[i];
-				stockASB[i] = temporary;
+				ASB[0] = 1;
+				stockASB[0] = 0;
 				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ASB1";
 			}
-			
-		}
 	
 	}
 	else if (code == "ASB2")
-	{	
-		for (i = 0; i < 5; i++)
-		{
-			if (i != 1)
-			{
-				continue;
-			}
+	{
 			
-			if (stockASB[i] == 1)
-			{
-				ASB[i] = temporary;
-				ASB[i] = stockASB[i];
-				stockASB[i] = temporary;
-				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
-			}
-			else
+			if (stockASB[1] == 0)
 			{
 				cout << "Out of stock :( " << endl << endl << endl << endl;
 			}
-		}
-		
+			else
+			{
+				ASB[1] = 1;
+				stockASB[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ASB2";
+			}
+	
 	}
 	else if (code == "ASB3")
 	{
-		
-		for (i = 0; i < 5; i++)
-		{
-			if (i != 2)
-			{
-				continue;
-			}
 			
-			if (stockASB[i] == 1)
-			{
-				ASB[i] = temporary;
-				ASB[i] = stockASB[i];
-				stockASB[i] = temporary;
-				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
-			}
-			else
+			if (stockASB[2] == 0)
 			{
 				cout << "Out of stock :( " << endl << endl << endl << endl;
 			}
-		}
-		
+			else
+			{
+				ASB[2] = 1;
+				stockASB[2] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ASB3";
+			}
+	
 	}
 	else if (code == "ASB4")
 	{
-	
-		for (i = 0; i < 5; i++)
-		{
-			if (i != 3)
-			{
-				continue;
-			}
 			
-			if (stockASB[i] == 1)
-			{
-				ASB[i] = temporary;
-				ASB[i] = stockASB[i];
-				stockASB[i] = temporary;
-				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
-			}
-			else
+			if (stockASB[3] == 0)
 			{
 				cout << "Out of stock :( " << endl << endl << endl << endl;
 			}
-		}
-		
+			else
+			{
+				ASB[3] = 1;
+				stockASB[3] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ASB4";
+			}
+	
 	}
 	else if (code == "ASB5")
 	{
 			
-		for (i = 0; i < 5; i++)
-		{
-			if (i != 4)
-			{
-				continue;
-			}
-			
-			if (stockASB[i] == 1)
-			{
-				ASB[i] = temporary;
-				ASB[i] = stockASB[i];
-				stockASB[i] = temporary;
-				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
-			}
-			else
+			if (stockASB[4] == 0)
 			{
 				cout << "Out of stock :( " << endl << endl << endl << endl;
 			}
-		}
-		
+			else
+			{
+				ASB[4] = 1;
+				stockASB[4] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ASB5";
+			}
+	
 	}
 	else
 	{
 		cout << "No item added to cart. " << endl << endl << endl << endl;
 	}
+	
 	
 	for (int i = 0; i < 5; i++)
 	{
@@ -493,54 +459,49 @@ void decision()
 
 int main() 
 {
-<<<<<<< HEAD
 	string name, pass1, address, contact;
-=======
 	string user, pass;
 	char stop;
-	int i;
 	
->>>>>>> main
 	cout << setw(50) << setfill(' ') << "" << "Welcome to Harith's shop." << setw(50) << "=" << endl << endl;
 	cout << setw(50) << setfill(' ') << " " << "**Profile Creation**" << endl;
 	cout << setw(50) << " " << "--------------------" << endl;
-	cout << " " << "NAME : ";
+	
+	cout << " NAME : ";
 	getline(cin,name);
-	cout << " " << "PASSWORD : ";
+	cout << " PASSWORD : ";
 	getline(cin,pass1);
-	cout << " " << "ADDRESS : ";
+	cout << " ADDRESS : ";
 	getline(cin,address);
-	cout << " " << "CONTACT : ";
+	cout << " CONTACT : ";
 	getline(cin,contact);
+	system("cls");
+	
 	//greeting
 	cout << setfill ('-') << setw (100) << "-" << endl;
 	cout << "\t\t\t\tWELCOME " << user << " TO OUR CATALOG BRANDED SHOES!" << endl;
 	cout << setfill ('-') << setw (100) << "-";
-	
+	system("cls");
 	
 	while (stop != 'Y' && stop != 'y')
 	{
-		while (i < 20)
-		{
-			cout << endl;
-			i++;
-		}
 		catalog();
 		decision();
 		cout << "Do you want to proceed to checkout or continue browsing? (Y-yes / N-no) : ";
 		cin >> stop;
 		cin.ignore();
+		i++;
+		system("cls");
+	}
+	
+	for (int X = 0; X < 30; X++)
+	{
+		cout << cart[X] << " ";
 	}
 	
 	
 	
 	
-	
-	
 
-//		else
-//		{
-//			
-//		}
 	return 0;
 }
