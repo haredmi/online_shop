@@ -1,7 +1,12 @@
 #include <iostream>
+#include <cstdlib>
 #include <iomanip>
 #include <string>
 using namespace std;
+
+int ASB[5] = {0}, i, stockASB[5] = {1,1,1,1,1}, temporary;
+//int noOfShoe;
+//string cart[];
 
 void catalog()
 {
@@ -346,7 +351,6 @@ void catalog()
 
 void decision()
 {
-	int ASB[5] = {0}, i, stockASB[5] = {1,1,1,1,1}, temporary;
 	char decision;
 	string code;
 	
@@ -493,17 +497,15 @@ void decision()
 
 int main() 
 {
-<<<<<<< HEAD
 	string name, pass1, address, contact;
-=======
 	string user, pass;
 	char stop;
 	int i;
 	
->>>>>>> main
 	cout << setw(50) << setfill(' ') << "" << "Welcome to Harith's shop." << setw(50) << "=" << endl << endl;
 	cout << setw(50) << setfill(' ') << " " << "**Profile Creation**" << endl;
 	cout << setw(50) << " " << "--------------------" << endl;
+	
 	cout << " " << "NAME : ";
 	getline(cin,name);
 	cout << " " << "PASSWORD : ";
@@ -512,11 +514,14 @@ int main()
 	getline(cin,address);
 	cout << " " << "CONTACT : ";
 	getline(cin,contact);
+	system("cls");
+	
 	//greeting
 	cout << setfill ('-') << setw (100) << "-" << endl;
 	cout << "\t\t\t\tWELCOME " << user << " TO OUR CATALOG BRANDED SHOES!" << endl;
 	cout << setfill ('-') << setw (100) << "-";
-	
+	cout << "Enter how much shoe you wish to order : ";
+	system("cls");
 	
 	while (stop != 'Y' && stop != 'y')
 	{
