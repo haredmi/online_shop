@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
+#include <ctime>
 #include <windows.h>
 #include <string>
 using namespace std;
@@ -9,9 +10,17 @@ int ASB[5] = {0}, stockASB[5] = {1, 1, 1, 1, 1}, ASZ[5] = {0}, stockASZ[5] = {1,
 	AGZ[5] = {0}, stockAGZ[5] = {1, 1, 1, 1, 1}, NSR[4] = {0}, stockNSR[4] = {1, 1, 1, 1}, NTH[5] = {0}, stockNTH[5] = {1, 1, 1, 1, 1}, NZR[5] = {0}, stockNZR[5] = {1, 1, 1, 1, 1}, NSS[5] = {0}, stockNSS[5] = {1, 1, 1, 1, 1},
 	NFF[5] = {0}, stockNFF[5] = {1, 1, 1, 1, 1}, PPL[5] = {0}, stockPPL[5] = {1, 1, 1, 1, 1}, PSC[5] = {0}, stockPSC[5] = {1, 1, 1, 1, 1}, PSD[5] = {0}, stockPSD[5] = {1, 1, 1, 1, 1}, ANC[5] = {0}, stockANC[5] = {1, 1, 1, 1, 1}, 
 	AKH[5] = {0}, stockAKH[5] = {1, 1, 1, 1, 1}, AKY[5] = {0}, stockAKY[5] = {1, 1, 1, 1, 1}, ANB[5] = {0}, stockANB[3] = {1, 1, 1};
-	getline (cin, code);
+string cart[30];
+
+void decision(int &i)
+{
+	string code;
+	char decision;
 	
-	while (code != "ASB1" && code != "ASB2" && code != "ASB3" && code != "ASB4" && code != "ASB5" && code != "ASZ1" && code != "ASZ2" && code != "ASZ3" && code != "ASZ4" && code != "ASZ5" && code != "s" && code != "S")
+	cout << "Enter code (\'S\' if you did not interested) : ";
+  
+	while (code != "ASB1" && code != "ASB2" && code != "ASB3" && code != "ASB4" && code != "ASB5" && code != "ASZ1" && code != "ASZ2" && code != "ASZ3" && code != "ASZ4" && code != "ASZ5" 
+	&& code != "s" && code != "S")
 	{
 		cout << "No such code exist! Please re-enter : ";
 		getline (cin, code);
@@ -213,7 +222,6 @@ int ASB[5] = {0}, stockASB[5] = {1, 1, 1, 1, 1}, ASZ[5] = {0}, stockASZ[5] = {1,
 				cart[i] = "ASS1";
 				i++;
 			}
-	
 	}
 	else if (code == "ASS2")
 	{
@@ -380,7 +388,7 @@ int ASB[5] = {0}, stockASB[5] = {1, 1, 1, 1, 1}, ASZ[5] = {0}, stockASZ[5] = {1,
 	else
 	{
 		cout << "No item added to cart. " << endl << endl << endl << endl;
-	}
+  }
 
 		if (code == "NSR1")
 	{
@@ -1118,8 +1126,7 @@ int ASB[5] = {0}, stockASB[5] = {1, 1, 1, 1, 1}, ASZ[5] = {0}, stockASZ[5] = {1,
 				i++;
 			}
 	}
-
-	if (code == "ANC3")
+  else if (code == "ANC3")
 	{
 			
 			if (stockANC[0] == 0)
@@ -1207,9 +1214,8 @@ int ASB[5] = {0}, stockASB[5] = {1, 1, 1, 1, 1}, ASZ[5] = {0}, stockASZ[5] = {1,
 				cart[i] = "AKH2";
 				i++;
 			}
-	}
-
-	if (code == "AKH3")
+  }
+	else if (code == "AKH3")
 	{
 			
 			if (stockAKH[0] == 0)
@@ -1298,8 +1304,7 @@ int ASB[5] = {0}, stockASB[5] = {1, 1, 1, 1, 1}, ASZ[5] = {0}, stockASZ[5] = {1,
 				i++;
 			}
 	}
-
-	if (code == "AKY3")
+  else if (code == "AKY3")
 	{
 			
 			if (stockAKY[0] == 0)
@@ -1388,8 +1393,7 @@ int ASB[5] = {0}, stockASB[5] = {1, 1, 1, 1, 1}, ASZ[5] = {0}, stockASZ[5] = {1,
 				i++;
 			}
 	}
-
-	if (code == "ANB3")
+  else if (code == "ANB3")
 	{
 			
 			if (stockANB[0] == 0)
@@ -1406,11 +1410,11 @@ int ASB[5] = {0}, stockASB[5] = {1, 1, 1, 1, 1}, ASZ[5] = {0}, stockASZ[5] = {1,
 			}
 	
 	}
-
 	else
 	{
 		cout << "No item added to cart. " << endl << endl << endl << endl;
 	}
+}
 	
 void catalog()
 {
@@ -1419,7 +1423,7 @@ void catalog()
 	//product display
 	cout << endl;
 	cout << "What brand are you looking for?";
-	cout << " \n\nEnter brand of shoes (Adidas, Nike, Asics, NewBalance, Puma): ";
+	cout << " \n\nEnter brand of shoes (Adidas, Asics, NewBalance, Puma): ";
 	getline (cin,brand);
 	system("CLS");
 	if (brand == "ASICS" || brand == "asics" || brand == "Asics")
@@ -1553,80 +1557,6 @@ void catalog()
 		}	
 	}
 	
-	if (brand == "NIKE" || brand == "Nike" || brand == "nike")
-	{
-		cout << "\nWhat nike's shoes you want to buy?";
-		cout << " \n\nEnter nike's shoes (SHOX, CORTEZ, VOMERO 5, KILLSHOT 2, P6000): ";
-		getline (cin,nikeSho);
-		
-		system("CLS");
-		
-		if (nikeSho == "SHOX" || nikeSho == "Shox" || nikeSho == "shox")
-		{
-			cout << endl << right << setw(31) << "[PREVIEW NIKE SHOX]" << endl;
-			cout << left << setfill ('-') << setw (42) << " " << endl;
-			cout << "|" << setfill (' ') << setw (6) << " CODE" <<  "|" << setw (10) << " COLOURS" <<  "|" << setw (11) << " SIZE (UK)" <<  "|" << setw (11) << " PRICE (RM)" <<  "|" << endl;
-			cout << "|" << setfill ('-') << setw (41) << "-" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NSX1" << "|" << setw (10) << " WHITE" << "|" << right << setw (11) << "7 " << "|" << setw (11) << "259.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NSX2" << "|" << setw (10) << " BLACK" << "|" << right << setw (11) << "9 " << "|" << setw (11) << "259.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NSX3" << "|" << setw (10) << " BLUE" << "|" << right << setw (11) << "8 " << "|" << setw (11) << "259.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NSX4" << "|" << setw (10) << " RED" << "|" << right << setw (11) << "6 " << "|" << setw (11) << "259.99" << "|" << endl;
-			cout << left << setfill ('-') << setw (42) << " " << endl;
-		}
-		else if (nikeSho == "CORTEZ" || nikeSho == "Cortez" || nikeSho == "cortez")
-		{
-			cout << endl << right << setw(34) << "[PREVIEW NIKE CORTEZ]" << endl;
-			cout << left << setfill ('-') << setw (46) << " " << endl;
-			cout << "|" << setfill (' ') << setw (6) << " CODE" <<  "|" << setw (14) << " COLOURS" <<  "|" << setw (11) << " SIZE (UK)" <<  "|" << setw (11) << " PRICE (RM)" <<  "|" << endl;
-			cout << "|" << setfill ('-') << setw (45) << "-" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NCT1" << "|" << setw (14) << "RED" << "|" << right <<setw (11) << "7 " << "|" << setw (11) << "219.99" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NCT2" << "|" << setw (14) << "DARK BROWN" << "|" << right << setw (11) << "9 " << "|" << setw (11) << "219.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NCT3" << "|" << setw (14) << "DARK BLUE" << "|" << right << setw (11) << "8 " << "|" << setw (11) << "219.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NCT4" << "|" << setw (14) << "PURPLE" << "|" << right << setw (11) << "6 " << "|" << setw (11) << "219.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NCT5" << "|" << setw (14) << "WHITE PINK" << "|" << right << setw (11) << "6 " << "|" << setw (11) << "219.99" << "|" << endl;
-			cout << left << setfill ('-') << setw (46) << " " << endl;
-		}
-		else if (nikeSho == "VOMERO 5" || nikeSho == "Vomero 5" || nikeSho == "vomero 5" || nikeSho == "VOMERO5" || nikeSho == "Vomero5" || nikeSho == "vomero5")
-		{
-			cout << endl << right << setw(34) << "[PREVIEW NIKE VOMERO 5]" << endl;
-			cout << left << setfill ('-') << setw (46) << " " << endl;
-			cout << "|" << setfill (' ') << setw (6) << " CODE" <<  "|" << setw (14) << " COLOURS" <<  "|" << setw (11) << " SIZE (UK)" <<  "|" << setw (11) << " PRICE (RM)" <<  "|" << endl;
-			cout << "|" << setfill ('-') << setw (45) << "-" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NVM1" << "|" << setw (14) << " YELLOW WHITE" << "|" << right << setw (11) << "8" << "|" << setw (11) << "229.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NVM2" << "|" << setw (14) << " GREY" << "|" << right << setw (11) << "7" << "|" << setw (11) << "229.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NVM3" << "|" << setw (14) << " BEIGE" << "|" << right << setw (11) << "8" << "|" << setw (11) << "229.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NVM4" << "|" << setw (14) << " DARK BROWN" << "|" << right << setw (11) << "9" << "|" << setw (11) << "229.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NVM5" << "|" << setw (14) << " LIGHT PINK" << "|" << right << setw (11) << "6" << "|" << setw (11) << "229.99" << "|" << endl;
-			cout << left << setfill ('-') << setw (46) << " " << endl;
-		}
-		else if (nikeSho == "KILLSHOT 2" || nikeSho == "Killshot 2" || nikeSho == "killshot 2" || nikeSho == "KILLSHOT2" || nikeSho == "Killshot2" || nikeSho == "killshot2")
-		{
-			cout << endl << right << setw(36) << "[PREVIEW NIKE KILLSHOT 2]" << endl;
-			cout << left << setfill ('-') << setw (46) << " " << endl;
-			cout << "|" << setfill (' ') << setw (6) << " CODE" <<  "|" << setw (14) << " COLOURS" <<  "|" << setw (11) << " SIZE (UK)" <<  "|" << setw (11) << " PRICE (RM)" <<  "|" << endl;
-			cout << "|" << setfill ('-') << setw (45) << "-" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NKS1" << "|" << setw (14) << " WHITE BLACK" << "|" << right << setw (11) << "8 " << "|" << setw (11) << "269.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NKS2" << "|" << setw (14) << " WHITE BLUE" << "|" << right << setw (11) << "7 " << "|" << setw (11) << "269.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NKS3" << "|" << setw (14) << " WHITE RED" << "|" << right << setw (11) << "6 " << "|" << setw (11) << "269.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NKS4" << "|" << setw (14) << " WHITE GREEN" << "|" << right << setw (11) << "9 " << "|" << setw (11) << "269.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NKS5" << "|" << setw (14) << " WHITE BROWN" << "|" << right << setw (11) << "8 " << "|" << setw (11) << "269.99" << "|" << endl;
-			cout << left << setfill ('-') << setw (46) << " " << endl;
-		}	
-		else if (nikeSho == "P6000" || nikeSho == "p6000" || nikeSho == "P 6000" || nikeSho == "p 6000")
-		{
-			cout << endl << right << setw(34) << "[PREVIEW NIKE P6000]" << endl;
-			cout << left << setfill ('-') << setw (46) << " " << endl;
-			cout << "|" << setfill (' ') << setw (6) << " CODE" <<  "|" << setw (14) << " COLOURS" <<  "|" << setw (11) << " SIZE (UK)" <<  "|" << setw (11) << " PRICE (RM)" <<  "|" << endl;
-			cout << "|" << setfill ('-') << setw (45) << "-" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NPS1" << "|" << setw (14) << "DARK BLUE" << "|" << right << setw (11) << "7 " << "|" << setw (11) << "249.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NPS2" << "|" << setw (14) << "GREEN GREY" << "|" << right << setw (11) << "9 " << "|" << setw (11) << "249.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NPS3" << "|" << setw (14) << "BLUE GREY" << "|" << right << setw (11) << "8 " << "|" << setw (11) << "249.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NPS4" << "|" << setw (14) << "BLACK" << "|" << right << setw (11) << "7 " << "|" << setw (11) << "249.99" << "|" << endl;
-			cout << "|" << left << setfill (' ') << setw (6) << " NPS5" << "|" << setw (14) << "WHITE" << "|" << right << setw (11) << "9 " << "|" << setw (11) << "249.99" << "|" << endl;
-			cout << left << setfill ('-') << setw (46) << " " << endl;
-		}	
-	}
-	
 	if (brand == "NEWBALANCE" || brand == "newbalance" || brand == "new balance" || brand == "NEW BALANCE" || brand == "New Balance")
 	{
 		cout << "\nWhat nike's shoes you want to buy?";
@@ -1753,55 +1683,118 @@ void catalog()
 
 }
 
+void delay (string message)
+{
+	cout << message;
+	Sleep(100);
+}
+
+void date()
+{
+	
+	// Get the timestamp for the current date and time
+  time_t timestamp;
+  time(&timestamp);
+
+  // Display the date and time represented by the timestamp
+  cout << ctime(&timestamp);
+}
+
+void invoice(string name, string street, string neighborhood, string code, string state, string contact, string city)
+{
+	cout << setfill(' ') << setw(40) << ' ' << "SHOE THRIFT SHOP SDN BHD" << endl;
+	cout << setw(40) << ' ' << "No. 15, Jalan Bukit Bintang, Bukit Bintang, " << endl;
+	cout << setw(40) << ' ' << "55100 Kuala Lumpur, Malaysia" << endl;
+	cout << setw(40) << ' ' << "Tel : +60312345678  " << "www.shoethriftshop.com.my" << endl;
+	
+	
+	for (int line=0; line<=85; line++)
+		cout << "_";
+		
+	cout << left << setw(30) << "\nBILLING" << setw(20) << "Invoice" << setw(15) << "No. " << ": IV " << endl;
+	cout << left << setw(50) << name << setw(15) << "Your Ref. " << ": 23690" << endl;
+	cout << left << setw(50) << street << setw(15) << "Our D/O No  " << ": " << endl;
+	cout << left << setw(50) << neighborhood << setw(15) << "Terms " << ": Online Banking" << endl;
+	cout << left << setw(6) << code << setw(44) << city << setw(15) << "Date " << ": " ;
+	date(); 
+	cout << left << setw(50) << state << setw(15) << "Page " << ": 1 of 1" << endl;
+	cout << left << setw(50) << contact << setw(15) << "Account code " << ": 3000/M256" << endl;
+	
+	for (int line=0; line<=85; line++)
+		cout << "_";
+	
+	cout << setw(5) << "\nNo" << setw(10) << "Code" << setw(40) << "Description" << setw(5) << "Qty" << setw(15) << "Price/Unit(RM)" << setw(15) << "Amount(RM)" << endl;
+
+	for (int line=0; line<=85; line++)
+		cout << "_";
+		
+	cout << setw(5) << "\nNO" << setw(10) << "CODE" << setw(30) << "DESCRIPTION" << setw(5) << "QTY" << setw(15) << "PRICE/UNIT" << setw(15) << "AMOUNT" << endl;
+
+	for (int line=0; line<=85; line++)
+		cout << "_";
+	
+	cout << "\nTotal (RM) : " << "tanye harith nak buat camne" << endl;
+	
+	cout << "\nAll cheques should be crossed and made payable to HARITH'S SHOP SDN BHD" << endl;
+	cout << "HLB bank account to \t\t : 012345678901" << endl;
+	
+	cout << setw(50) << "\n\n\nAuthorised signature" << setw(25) << "Received by";
+}
+
+
 int main() 
 {
-	string user, pass, address, contact;
-	char stop;
-	int i = 0;
+	string user, pass, address, contact, street, neighborhood, city, state, code;
+	int stop, i = 0;
 	
 	cout << " -------------------------------------------- " << endl;
 	cout << "|         Welcome to Shoe Thrift Shop.       |" << endl;
 	cout << " -------------------------------------------- " << endl;
 	
 	cout << "            -+ Profile Creation +-            " << endl;
-	cout << "   Username     :   ";
-	getline (cin, user);
-	cout << "   Password     :   ";
-	getline (cin, pass);
-	cout << "   Address      :   ";
-	getline (cin, address);
-	cout << "   Phone Number :   ";
-	getline (cin, contact); 
+	cout << " NAME         : ";
+	getline(cin, user);
+	cout << " PASSWORD     : ";
+	getline(cin,pass);
+	cout << " NUMBER PHONE : ";
+	getline(cin,contact);
+	cout << " STREET NAME  : ";
+	getline(cin,street);
+	cout << " NEIGHBORHOOD : ";
+	getline(cin,neighborhood);
+	cout << " POSTCODE     : ";
+	getline(cin,code);	
+	cout << " CITY         : ";
+	getline(cin,city);
+	cout << " STATE        : ";
+	getline(cin,state);	
 	
 	//greeting
-	cout << "\n\nW";
-	Sleep(100);
-	cout << "e";
-	Sleep(100);
-	cout << "l";
-	Sleep(100);
-	cout << "c";
-	Sleep(100);
-	cout << "o";
-	Sleep(100);
-	cout << "m";
-	Sleep(100);
-	cout << "e";
-	Sleep(100);
-	cout << " ";
-	Sleep(100);
-	cout << user;
-	Sleep(100);
+	cout << endl;
+	delay ("W");
+	delay ("e");
+	delay ("l");
+	delay ("c");
+	delay ("o");
+	delay ("m");
+	delay ("e");
+	delay (" ");
+	delay (user);
 	cout << "!";
 	Sleep(1500);
 	
 	system("cls");
 	
-	while (stop != 'Y' && stop != 'y')
+	while (stop != 1)
 	{
 		catalog();
 		decision(i);
-		cout << "Do you want to proceed to checkout or continue browsing? (Y-yes / N-no) : ";
+		cout << " ------------------------ " << endl;
+		
+		cout << "| [1] checkout           |" << endl;
+		cout << "| [2] continue browsing  |" << endl;
+		cout << " ------------------------ " << endl << endl;
+		cout << "Choose next step : ";
 		cin >> stop;
 		cin.ignore();
 		system("cls");
@@ -1811,6 +1804,11 @@ int main()
 	{
 		cout << "cart [" << X << "] : " << cart[X] << endl;
 	}
+	
+	system("pause");
+	system("cls");
+	
+	invoice(user, street, neighborhood, code, state, contact, city);
 
 	return 0;
 }
