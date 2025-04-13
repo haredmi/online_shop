@@ -5,15 +5,10 @@
 #include <string>
 using namespace std;
 
-int ASB[5] = {0}, stockASB[5] = {1,1,1,1,1}, ASZ[5] = {0}, stockASZ[5] = {1, 1, 1, 1, 1}, temporary;
-string cart[30];
-
-void decision(int &i)
-{
-	string code;
-	char decision;
-	
-	cout << "Enter code (\'S\' if you did not interested) : ";
+int ASB[5] = {0}, stockASB[5] = {1, 1, 1, 1, 1}, ASZ[5] = {0}, stockASZ[5] = {1, 1, 1, 1, 1}, ASS[2] = {0}, stockASS[2] = {1, 1}, ACP[3] = {0}, stockACP[3] = {1, 1, 1},
+	AGZ[5] = {0}, stockAGZ[5] = {1, 1, 1, 1, 1}, NSR[4] = {0}, stockNSR[4] = {1, 1, 1, 1}, NTH[5] = {0}, stockNTH[5] = {1, 1, 1, 1, 1}, NZR[5] = {0}, stockNZR[5] = {1, 1, 1, 1, 1}, NSS[5] = {0}, stockNSS[5] = {1, 1, 1, 1, 1},
+	NFF[5] = {0}, stockNFF[5] = {1, 1, 1, 1, 1}, PPL[5] = {0}, stockPPL[5] = {1, 1, 1, 1, 1}, PSC[5] = {0}, stockPSC[5] = {1, 1, 1, 1, 1}, PSD[5] = {0}, stockPSD[5] = {1, 1, 1, 1, 1}, ANC[5] = {0}, stockANC[5] = {1, 1, 1, 1, 1}, 
+	AKH[5] = {0}, stockAKH[5] = {1, 1, 1, 1, 1}, AKY[5] = {0}, stockAKY[5] = {1, 1, 1, 1, 1}, ANB[5] = {0}, stockANB[3] = {1, 1, 1};
 	getline (cin, code);
 	
 	while (code != "ASB1" && code != "ASB2" && code != "ASB3" && code != "ASB4" && code != "ASB5" && code != "ASZ1" && code != "ASZ2" && code != "ASZ3" && code != "ASZ4" && code != "ASZ5" && code != "s" && code != "S")
@@ -203,22 +198,1220 @@ void decision(int &i)
 		cout << "No item added to cart. " << endl << endl << endl << endl;
 	}
 	
-	
-	for (int i = 0; i < 5; i++)
+		if (code == "ASS1")
 	{
-		cout << "ordered [" << i+1 << "] : " << ASB[i] << endl;
-		cout << "Stock [" << i+1 << "] : " << stockASB[i] << endl << endl;
+			
+			if (stockASS[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ASS[0] = 1;
+				stockASS[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ASS1";
+				i++;
+			}
+	
+	}
+	else if (code == "ASS2")
+	{
+			
+			if (stockASS[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ASS[1] = 1;
+				stockASS[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ASS2";
+				i++;
+			}
+	}
+		else
+	{
+		cout << "No item added to cart. " << endl << endl << endl << endl;
 	}
 	
-	for (int i = 0; i < 5; i++)
+		if (code == "ACP1")
 	{
-		cout << "ordered [" << i+1 << "] : " << ASZ[i] << endl;
-		cout << "Stock [" << i+1 << "] : " << stockASZ[i] << endl << endl;
+			
+			if (stockACP[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ACP[0] = 1;
+				stockACP[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ACP1";
+				i++;
+			}
+	
+	}
+	else if (code == "ACP2")
+	{
+			
+			if (stockACP[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ACP[1] = 1;
+				stockACP[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ACP2";
+				i++;
+			}
+	
+	}
+	else if (code == "ACP3")
+	{
+			
+			if (stockACP[2] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ACP[2] = 1;
+				stockACP[2] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ACP3";
+				i++;
+			}
+	
+	}
+	else
+	{
+		cout << "No item added to cart. " << endl << endl << endl << endl;
 	}
 	
+	if (code == "AGZ1")
+	{
+			
+			if (stockAGZ[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				AGZ[0] = 1;
+				stockAGZ[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "AGZ1";
+				i++;
+			}
 	
-}
+	}
+	else if (code == "AGZ2")
+	{
+			
+			if (stockAGZ[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				AGZ[1] = 1;
+				stockAGZ[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "AGZ2";
+				i++;
+			}
+	}
 
+	if (code == "AGZ3")
+	{
+			
+			if (stockAGZ[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				AGZ[0] = 1;
+				stockAGZ[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "AGZ3";
+				i++;
+			}
+	
+	}
+	else if (code == "AGZ4")
+	{
+			
+			if (stockAGZ[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				AGZ[1] = 1;
+				stockAGZ[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "AGZ4";
+				i++;
+			}
+	
+	}
+	else if (code == "AGZ5")
+	{
+			
+			if (stockAGZ[2] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				AGZ[2] = 1;
+				stockAGZ[2] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "AGZ5";
+				i++;
+			}
+	
+	}
+	else
+	{
+		cout << "No item added to cart. " << endl << endl << endl << endl;
+	}
+
+		if (code == "NSR1")
+	{
+			
+			if (stockNSR[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NSR[0] = 1;
+				stockNSR[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NSR1";
+				i++;
+			}
+	
+	}
+	else if (code == "NSR2")
+	{
+			
+			if (stockNSR[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NSR[1] = 1;
+				stockNSR[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NSR2";
+				i++;
+			}
+	}
+
+	if (code == "NSR3")
+	{
+			
+			if (stockNSR[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NSR[0] = 1;
+				stockNSR[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NSR3";
+				i++;
+			}
+	
+	}
+	else if (code == "NSR4")
+	{
+			
+			if (stockNSR[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NSR[1] = 1;
+				stockNSR[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NSR4";
+				i++;
+			}
+	
+	}
+	else
+	{
+		cout << "No item added to cart. " << endl << endl << endl << endl;
+	}
+
+		if (code == "NTH1")
+	{
+			
+			if (stockNTH[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NTH[0] = 1;
+				stockNTH[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NTH1";
+				i++;
+			}
+	
+	}
+	else if (code == "NTH2")
+	{
+			
+			if (stockNTH[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NTH[1] = 1;
+				stockNTH[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NTH2";
+				i++;
+			}
+	}
+
+	if (code == "NTH3")
+	{
+			
+			if (stockNTH[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NTH[0] = 1;
+				stockNTH[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NTH3";
+				i++;
+			}
+	
+	}
+	else if (code == "NTH4")
+	{
+			
+			if (stockNTH[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NTH[1] = 1;
+				stockNTH[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NTH4";
+				i++;
+			}
+	
+	}
+	else if (code == "NTH5")
+	{
+			
+			if (stockNTH[2] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NTH[2] = 1;
+				stockNTH[2] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NTH5";
+				i++;
+			}
+	
+	}
+	else
+	{
+		cout << "No item added to cart. " << endl << endl << endl << endl;
+	}
+	
+	if (code == "NZR1")
+	{
+			
+			if (stockNZR[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NZR[0] = 1;
+				stockNZR[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NZR1";
+				i++;
+			}
+	
+	}
+	else if (code == "NZR2")
+	{
+			
+			if (stockNZR[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NZR[1] = 1;
+				stockNZR[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NZR2";
+				i++;
+			}
+	}
+
+	if (code == "NZR3")
+	{
+			
+			if (stockNZR[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NZR[0] = 1;
+				stockNZR[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NZR3";
+				i++;
+			}
+	
+	}
+	else if (code == "NZR4")
+	{
+			
+			if (stockNZR[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NZR[1] = 1;
+				stockNZR[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NZR4";
+				i++;
+			}
+	
+	}
+	else if (code == "NZR5")
+	{
+			
+			if (stockNZR[2] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NZR[2] = 1;
+				stockNZR[2] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NZR5";
+				i++;
+			}
+	
+	}
+	else
+	{
+		cout << "No item added to cart. " << endl << endl << endl << endl;
+	}
+	
+	if (code == "NSS1")
+	{
+			
+			if (stockNSS[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NSS[0] = 1;
+				stockNSS[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NSS1";
+				i++;
+			}
+	
+	}
+	else if (code == "NSS2")
+	{
+			
+			if (stockNSS[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NSS[1] = 1;
+				stockNSS[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NSS2";
+				i++;
+			}
+	}
+
+	if (code == "NSS3")
+	{
+			
+			if (stockNSS[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NSS[0] = 1;
+				stockNSS[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NSS3";
+				i++;
+			}
+	
+	}
+	else if (code == "NSS4")
+	{
+			
+			if (stockNSS[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NSS[1] = 1;
+				stockNSS[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NSS4";
+				i++;
+			}
+	
+	}
+	else if (code == "NSS5")
+	{
+			
+			if (stockNSS[2] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NSS[2] = 1;
+				stockNSS[2] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NSS5";
+				i++;
+			}
+	
+	}
+	else
+	{
+		cout << "No item added to cart. " << endl << endl << endl << endl;
+	}
+
+		if (code == "NFF1")
+	{
+			
+			if (stockNFF[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NFF[0] = 1;
+				stockNFF[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NFF1";
+				i++;
+			}
+	
+	}
+	else if (code == "NFF2")
+	{
+			
+			if (stockNFF[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NFF[1] = 1;
+				stockNFF[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NFF2";
+				i++;
+			}
+	}
+
+	if (code == "NFF3")
+	{
+			
+			if (stockNFF[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NFF[0] = 1;
+				stockNFF[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NFF3";
+				i++;
+			}
+	
+	}
+	else if (code == "NFF4")
+	{
+			
+			if (stockNFF[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NFF[1] = 1;
+				stockNFF[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NFF4";
+				i++;
+			}
+	
+	}
+	else if (code == "NFF5")
+	{
+			
+			if (stockNFF[2] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				NFF[2] = 1;
+				stockNFF[2] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "NFF5";
+				i++;
+			}
+	
+	}
+	else
+	{
+		cout << "No item added to cart. " << endl << endl << endl << endl;
+	}
+	
+	if (code == "PPL1")
+	{
+			
+			if (stockPPL[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				PPL[0] = 1;
+				stockPPL[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "PPL1";
+				i++;
+			}
+	
+	}
+	else if (code == "PPL2")
+	{
+			
+			if (stockPPL[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				PPL[1] = 1;
+				stockPPL[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "PPL2";
+				i++;
+			}
+	}
+
+	if (code == "PPL3")
+	{
+			
+			if (stockPPL[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				PPL[0] = 1;
+				stockPPL[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "PPL3";
+				i++;
+			}
+	
+	}
+	else if (code == "PPL4")
+	{
+			
+			if (stockPPL[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				PPL[1] = 1;
+				stockPPL[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "PPL4";
+				i++;
+			}
+	
+	}
+	else if (code == "PPL5")
+	{
+			
+			if (stockPPL[2] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				PPL[2] = 1;
+				stockPPL[2] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "PPL5";
+				i++;
+			}
+	
+	}
+	else
+	{
+		cout << "No item added to cart. " << endl << endl << endl << endl;
+	}
+	
+		if (code == "PSC1")
+	{
+			
+			if (stockPSC[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				PSC[0] = 1;
+				stockPSC[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "PSC1";
+				i++;
+			}
+	
+	}
+	else if (code == "PSC2")
+	{
+			
+			if (stockPSC[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				PSC[1] = 1;
+				stockPSC[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "PSC2";
+				i++;
+			}
+	}
+
+	if (code == "PSC3")
+	{
+			
+			if (stockPSC[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				PSC[0] = 1;
+				stockPSC[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "PSC3";
+				i++;
+			}
+	
+	}
+	else if (code == "PSC4")
+	{
+			
+			if (stockPSC[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				PSC[1] = 1;
+				stockPSC[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "PSC4";
+				i++;
+			}
+	
+	}
+	else if (code == "PSC5")
+	{
+			
+			if (stockPSC[2] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				PSC[2] = 1;
+				stockPSC[2] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "PSC5";
+				i++;
+			}
+	
+	}
+	else
+	{
+		cout << "No item added to cart. " << endl << endl << endl << endl;
+	}
+	
+		if (code == "PSD1")
+	{
+			
+			if (stockPSD[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				PSD[0] = 1;
+				stockPSD[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "PSD1";
+				i++;
+			}
+	
+	}
+	else if (code == "PSD2")
+	{
+			
+			if (stockPSD[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				PSD[1] = 1;
+				stockPSD[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "PSD2";
+				i++;
+			}
+	}
+
+	if (code == "PSD3")
+	{
+			
+			if (stockPSD[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				PSD[0] = 1;
+				stockPSD[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "PSD3";
+				i++;
+			}
+	
+	}
+	else if (code == "PSD4")
+	{
+			
+			if (stockPSD[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				PSD[1] = 1;
+				stockPSD[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "PSD4";
+				i++;
+			}
+	
+	}
+	else if (code == "PSD5")
+	{
+			
+			if (stockPSD[2] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				PSD[2] = 1;
+				stockPSD[2] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "PSD5";
+				i++;
+			}
+	
+	}
+	else
+	{
+		cout << "No item added to cart. " << endl << endl << endl << endl;
+	}
+	
+		if (code == "ANC1")
+	{
+			
+			if (stockANC[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ANC[0] = 1;
+				stockANC[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ANC1";
+				i++;
+			}
+	
+	}
+	else if (code == "ANC2")
+	{
+			
+			if (stockANC[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ANC[1] = 1;
+				stockANC[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ANC2";
+				i++;
+			}
+	}
+
+	if (code == "ANC3")
+	{
+			
+			if (stockANC[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ANC[0] = 1;
+				stockANC[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ANC3";
+				i++;
+			}
+	
+	}
+	else if (code == "ANC4")
+	{
+			
+			if (stockANC[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ANC[1] = 1;
+				stockANC[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ANC4";
+				i++;
+			}
+	
+	}
+	else if (code == "ANC5")
+	{
+			
+			if (stockANC[2] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ANC[2] = 1;
+				stockANC[2] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ANC5";
+				i++;
+			}
+	
+	}
+	else
+	{
+		cout << "No item added to cart. " << endl << endl << endl << endl;
+	}
+	
+	if (code == "AKH1")
+	{
+			
+			if (stockAKH[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				AKH[0] = 1;
+				stockAKH[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "AKH1";
+				i++;
+			}
+	
+	}
+	else if (code == "AKH2")
+	{
+			
+			if (stockAKH[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				AKH[1] = 1;
+				stockAKH[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "AKH2";
+				i++;
+			}
+	}
+
+	if (code == "AKH3")
+	{
+			
+			if (stockAKH[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				AKH[0] = 1;
+				stockAKH[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "AKH3";
+				i++;
+			}
+	
+	}
+	else if (code == "AKH4")
+	{
+			
+			if (stockAKH[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				AKH[1] = 1;
+				stockAKH[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "AKH4";
+				i++;
+			}
+	
+	}
+	else if (code == "AKH5")
+	{
+			
+			if (stockAKH[2] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				AKH[2] = 1;
+				stockAKH[2] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "AKH5";
+				i++;
+			}
+	
+	}
+	else
+	{
+		cout << "No item added to cart. " << endl << endl << endl << endl;
+	}
+	
+		if (code == "AKY1")
+	{
+			
+			if (stockAKY[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				AKY[0] = 1;
+				stockAKY[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "AKY1";
+				i++;
+			}
+	
+	}
+	else if (code == "AKY2")
+	{
+			
+			if (stockAKY[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				AKY[1] = 1;
+				stockAKY[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "AKY2";
+				i++;
+			}
+	}
+
+	if (code == "AKY3")
+	{
+			
+			if (stockAKY[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				AKY[0] = 1;
+				stockAKY[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "AKY3";
+				i++;
+			}
+	
+	}
+	else if (code == "AKY4")
+	{
+			
+			if (stockAKY[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				AKY[1] = 1;
+				stockAKY[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "AKY4";
+				i++;
+			}
+	
+	}
+	else if (code == "AKY5")
+	{
+			
+			if (stockAKY[2] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				AKY[2] = 1;
+				stockAKY[2] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "AKY5";
+				i++;
+			}
+	
+	}
+	else
+	{
+		cout << "No item added to cart. " << endl << endl << endl << endl;
+	}
+	
+		if (code == "ANB1")
+	{
+			
+			if (stockANB[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ANB[0] = 1;
+				stockANB[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ANB1";
+				i++;
+			}
+	
+	}
+	else if (code == "ANB2")
+	{
+			
+			if (stockANB[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ANB[1] = 1;
+				stockANB[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ANB2";
+				i++;
+			}
+	}
+
+	if (code == "ANB3")
+	{
+			
+			if (stockANB[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ANB[0] = 1;
+				stockANB[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ANB3";
+				i++;
+			}
+	
+	}
+
+	else
+	{
+		cout << "No item added to cart. " << endl << endl << endl << endl;
+	}
+	
 void catalog()
 {
 	string brand, asicsSho, adidasSho, nbSho, pumaSho, nikeSho;
