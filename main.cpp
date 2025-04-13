@@ -1,9 +1,225 @@
 #include <iostream>
+#include <cstdlib>
 #include <iomanip>
+#include <windows.h>
 #include <string>
 #include <cstdlib>
 #include <windows.h>
 using namespace std;
+
+int ASB[5] = {0}, stockASB[5] = {1,1,1,1,1}, ASZ[5] = {0}, stockASZ[5] = {1, 1, 1, 1, 1}, temporary;
+string cart[30];
+
+void decision(int &i)
+{
+	string code;
+	char decision;
+	
+	cout << "Enter code (\'S\' if you did not interested) : ";
+	getline (cin, code);
+	
+	while (code != "ASB1" && code != "ASB2" && code != "ASB3" && code != "ASB4" && code != "ASB5" && code != "ASZ1" && code != "ASZ2" && code != "ASZ3" && code != "ASZ4" && code != "ASZ5" && code != "s" && code != "S")
+	{
+		cout << "No such code exist! Please re-enter : ";
+		getline (cin, code);
+	}
+	
+	if (code == "ASB1")
+	{
+			
+			if (stockASB[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ASB[0] = 1;
+				stockASB[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ASB1";
+				i++;
+			}
+	
+	}
+	else if (code == "ASB2")
+	{
+			
+			if (stockASB[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ASB[1] = 1;
+				stockASB[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ASB2";
+				i++;
+			}
+	
+	}
+	else if (code == "ASB3")
+	{
+			
+			if (stockASB[2] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ASB[2] = 1;
+				stockASB[2] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ASB3";
+				i++;
+			}
+	
+	}
+	else if (code == "ASB4")
+	{
+			
+			if (stockASB[3] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ASB[3] = 1;
+				stockASB[3] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ASB4";
+				i++;
+			}
+	
+	}
+	else if (code == "ASB5")
+	{
+			
+			if (stockASB[4] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ASB[4] = 1;
+				stockASB[4] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ASB5";
+				i++;
+			}
+	
+	}
+	else
+	{
+		cout << "No item added to cart. " << endl << endl << endl << endl;
+	}
+	
+	
+	if (code == "ASZ1")
+	{
+			
+			if (stockASZ[0] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ASZ[0] = 1;
+				stockASZ[0] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ASZ1";
+				i++;
+			}
+	
+	}
+	else if (code == "ASZ2")
+	{
+			
+			if (stockASZ[1] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ASZ[1] = 1;
+				stockASZ[1] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ASZ2";
+				i++;
+			}
+	
+	}
+	else if (code == "ASZ3")
+	{
+			
+			if (stockASZ[2] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ASZ[2] = 1;
+				stockASZ[2] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ASZ3";
+				i++;
+			}
+	
+	}
+	else if (code == "ASZ4")
+	{
+			
+			if (stockASZ[3] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ASZ[3] = 1;
+				stockASZ[3] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ASZ4";
+				i++;
+			}
+	
+	}
+	else if (code == "ASZ5")
+	{
+			
+			if (stockASZ[4] == 0)
+			{
+				cout << "Out of stock :( " << endl << endl << endl << endl;
+			}
+			else
+			{
+				ASZ[4] = 1;
+				stockASZ[4] = 0;
+				cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
+				cart[i] = "ASZ5";
+				i++;
+			}
+	
+	}
+	else
+	{
+		cout << "No item added to cart. " << endl << endl << endl << endl;
+	}
+	
+	
+	for (int i = 0; i < 5; i++)
+	{
+		cout << "ordered [" << i+1 << "] : " << ASB[i] << endl;
+		cout << "Stock [" << i+1 << "] : " << stockASB[i] << endl << endl;
+	}
+	
+	for (int i = 0; i < 5; i++)
+	{
+		cout << "ordered [" << i+1 << "] : " << ASZ[i] << endl;
+		cout << "Stock [" << i+1 << "] : " << stockASZ[i] << endl << endl;
+	}
+	
+	
+}
 
 void catalog()
 {
@@ -86,7 +302,7 @@ void catalog()
 		
 		if (adidasSho == "samba" || adidasSho == "SAMBA" || adidasSho == "Samba")
 		{
-			cout << endl << right << setw(34) << "[PREVIEW ADIDAS SAMBA]" << endl;
+			cout << endl << right << setw(34) << setfill (' ') << "[PREVIEW ADIDAS SAMBA]" << endl;
 			cout << left << setfill ('-') << setw (46) << " " << endl;
 			cout << "|" << setfill (' ') << setw (6) << " CODE" <<  "|" << setw (14) << " COLOURS" <<  "|" << setw (11) << " SIZE (UK)" <<  "|" << setw (11) << " PRICE (RM)" <<  "|" << endl;
 			cout << "|" << setfill ('-') << setw (45) << "-" << "|" << endl;
@@ -99,7 +315,7 @@ void catalog()
 		}
 		else if (adidasSho == "spezial" || adidasSho == "SPEZIAL" || adidasSho == "Spezial")
 		{
-			cout << endl << right << setw(35) << "[PREVIEW ADIDAS SPEZIAL]" << endl;
+			cout << endl << right << setw(35) << setfill (' ') << "[PREVIEW ADIDAS SPEZIAL]" << endl;
 			cout << left << setfill ('-') << setw (46) << " " << endl;
 			cout << "|" << setfill (' ') << setw (6) << " CODE" <<  "|" << setw (14) << " COLOURS" <<  "|" << setw (11) << " SIZE (UK)" <<  "|" << setw (11) << " PRICE (RM)" <<  "|" << endl;
 			cout << "|" << setfill ('-') << setw (45) << "-" << "|" << endl;
@@ -346,345 +562,72 @@ void catalog()
 
 }
 
-
-void decision()
-{
-	int ASB[5] = {0}, i, stockASB[5] = {1,1,1,1,1}, temporary;
-	char decision;
-	string code;
-	
-	cout << "Enter code (\'S\' if you did not interested) : ";
-	getline (cin, code);
-	
-	{
-		if (code == "ASB1")
-		{
-			for (i = 0; i < 5; i++)
-			{
-				if (i != 0)
-				{
-					continue;
-				}
-				
-				if (stockASB[i] == 0)
-				{
-					cout << "Out of stock :( " << endl << endl << endl << endl;
-				}
-				else
-				{
-					ASB[i] = temporary;
-					ASB[i] = stockASB[i];
-					stockASB[i] = temporary;
-					cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
-				}
-				
-			}
-		
-		}
-		
-		else if (code == "ASB2")
-		{	
-			for (i = 0; i < 5; i++)
-			{
-				if (i != 1)
-				{
-					continue;
-				}
-				
-				if (stockASB[i] == 1)
-				{
-					ASB[i] = temporary;
-					ASB[i] = stockASB[i];
-					stockASB[i] = temporary;
-					cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
-				}
-				else
-				{
-					cout << "Out of stock :( " << endl << endl << endl << endl;
-				}
-			}
-			
-		}
-		else if (code == "ASB3")
-		{
-			
-			for (i = 0; i < 5; i++)
-			{
-				if (i != 2)
-				{
-					continue;
-				}
-				
-				if (stockASB[i] == 1)
-				{
-					ASB[i] = temporary;
-					ASB[i] = stockASB[i];
-					stockASB[i] = temporary;
-					cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
-				}
-				else
-				{
-					cout << "Out of stock :( " << endl << endl << endl << endl;
-				}
-			}
-			
-		}
-		else if (code == "ASB4")
-		{
-		
-			for (i = 0; i < 5; i++)
-			{
-				if (i != 3)
-				{
-					continue;
-				}
-				
-				if (stockASB[i] == 1)
-				{
-					ASB[i] = temporary;
-					ASB[i] = stockASB[i];
-					stockASB[i] = temporary;
-					cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
-				}
-				else
-				{
-					cout << "Out of stock :( " << endl << endl << endl << endl;
-				}
-			}
-			
-		}
-		else if (code == "ASB5")
-		{
-				
-			for (i = 0; i < 5; i++)
-			{
-				if (i != 4)
-				{
-					continue;
-				}
-				
-				if (stockASB[i] == 1)
-				{
-					ASB[i] = temporary;
-					ASB[i] = stockASB[i];
-					stockASB[i] = temporary;
-					cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
-				}
-				else
-				{
-					cout << "Out of stock :( " << endl << endl << endl << endl;
-				}
-			}
-			
-		}
-		else
-		{
-	//		for (int w=0; w<=3; w++)
-	//		{
-				cout << "No item added to cart.\nThe code you have entered is wrong. Please re-enter the code = " ;
-				getline(cin,code);
-				cout << endl;
-	//		}
-		}
-		
-		for (int i = 0; i < 5; i++)
-		{
-			cout << "ordered [" << i+1 << "] : " << ASB[i] << endl;
-			cout << "Stock [" << i+1 << "] : " << stockASB[i] << endl << endl;
-		}
-	}
-	
-	
-	int ASZ[5] = {0}, stockASZ[5] = {1,1,1,1,1}, temporary1;
-
-	{
-		if (code == "ASZ1")
-		{
-			for (i = 0; i < 5; i++)
-			{
-				if (i != 0)
-				{
-					continue;
-				}
-			
-				if (stockASZ[i] == 0)
-				{
-					cout << "Out of stock :( " << endl << endl << endl << endl;
-				}
-				else
-				{
-					ASZ[i] = temporary1;
-					ASZ[i] = stockASZ[i];
-					stockASZ[i] = temporary1;
-					cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
-				}
-			
-			}
-	
-		}
-	
-		else if (code == "ASZ2")
-		{	
-			for (i = 0; i < 5; i++)
-			{
-				if (i != 1)
-				{
-					continue;
-				}
-			
-				if (stockASZ[i] == 1)
-				{
-					ASZ[i] = temporary1;
-					ASZ[i] = stockASZ[i];
-					stockASZ[i] = temporary1;
-					cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
-				}
-				else
-				{
-					cout << "Out of stock :( " << endl << endl << endl << endl;
-				}
-			}
-		
-		}
-		else if (code == "ASZ3")
-		{
-			
-			for (i = 0; i < 5; i++)
-			{
-				if (i != 2)
-				{
-					continue;
-				}
-				
-				if (stockASZ[i] == 1)
-				{
-					ASZ[i] = temporary1;
-					ASZ[i] = stockASZ[i];
-					stockASZ[i] = temporary1;
-					cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
-				}
-				else
-				{
-					cout << "Out of stock :( " << endl << endl << endl << endl;
-				}
-			}
-			
-		}
-		else if (code == "ASZ4")
-		{
-		
-			for (i = 0; i < 5; i++)
-			{
-				if (i != 3)
-				{
-					continue;
-				}
-				
-				if (stockASZ[i] == 1)
-				{
-					ASZ[i] = temporary1;
-					ASZ[i] = stockASZ[i];
-					stockASZ[i] = temporary1;
-					cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
-				}
-				else
-				{
-					cout << "Out of stock :( " << endl << endl << endl << endl;
-				}
-			}
-			
-		}
-		else if (code == "ASZ5")
-		{
-				
-			for (i = 0; i < 5; i++)
-			{
-				if (i != 4)
-				{
-					continue;
-				}
-				
-				if (stockASZ[i] == 1)
-				{
-					ASZ[i] = temporary1;
-					ASZ[i] = stockASZ[i];
-					stockASZ[i] = temporary1;
-					cout << "Sucessfully added to cart!" << endl << endl << endl << endl;
-				}
-				else
-				{
-					cout << "Out of stock :( " << endl << endl << endl << endl;
-				}
-			}
-			
-		}
-		else
-		{
-		//		for (int w=0; w<=3; w++)
-		//		{
-			cout << "No item added to cart.\nThe code you have entered is wrong. Please re-enter the code = " ;
-			getline(cin,code);
-			cout << endl;
-		//		}
-		}
-		
-		for (int i = 0; i < 5; i++)
-		{
-			cout << "ordered [" << i+1 << "] : " << ASZ[i] << endl;
-			cout << "Stock [" << i+1 << "] : " << stockASZ[i] << endl << endl;
-		}
-	}
-}
-
 int main() 
 {
-
-	string name, pass1, contact, street, neighborhood, city, state, code;
-
-	string user, pass;
+	string user, pass, contact, street, neighborhood, city, state, code;
 	char stop;
-	int i;
-
-	cout << left << setw(13) << "NAME " << ": ";
-	getline(cin,name);
-	cout << setw(13) << "PASSWORD " << ": ";
-	getline(cin,pass1);
-	cout << setw(13) << "CONTACT " << ": ";
-	getline(cin,contact);
-	cout << "ADDRESS :- " << endl;
-	cout << setw(13) << "STREET NAME " << ": ";
+	int i = 0;
+	
+	cout << " -------------------------------------------- " << endl;
+	cout << "|         Welcome to Shoe Thrift Shop.       |" << endl;
+	cout << " -------------------------------------------- " << endl;
+	
+	cout << "            -+ Profile Creation +-            " << endl;
+	cout << "   Username     :   ";
+	getline (cin, user);
+	cout << "   Password     :   ";
+	getline (cin, pass);
+	cout << "   Phone Number :   ";
+	getline (cin, contact); 
+	cout << "   Address :- " << endl;
+	cout << "   Street Name  :   ";
 	getline(cin,street);
-	cout << setw(13) << "NEIGHBORHOOD " << ": " ;
+	cout << "   Neighborhood :   ";
 	getline(cin,neighborhood);
-	cout << setw(13) << "POSTCODE " << ": ";
+	cout << "   Postcode     :   ";
 	getline(cin,code);	
-	cout << setw(13) << "CITY " << ": ";
+	cout << "   City         :   ";
 	getline(cin,city);
-	cout << setw(13) << "STATE " << ": ";
+	cout << "   State        :   ";
 	getline(cin,state);	
-	system("CLS");
 	
-	cout << "Wait a minute";
-	
-	for (int i=0; i<5; i++)
-	{
-		Sleep(1000);
-		cout << ".";
-	}
-	cout << endl;
-	system("CLS");
 	//greeting
+	cout << "\n\nW";
+	Sleep(100);
+	cout << "e";
+	Sleep(100);
+	cout << "l";
+	Sleep(100);
+	cout << "c";
+	Sleep(100);
+	cout << "o";
+	Sleep(100);
+	cout << "m";
+	Sleep(100);
+	cout << "e";
+	Sleep(100);
+	cout << " ";
+	Sleep(100);
+	cout << user;
+	Sleep(100);
+	cout << "!";
+	Sleep(1500);
 	
-	cout << right << setw(20) << setfill(' ') << "[Hi " << left << name << "!!! Welcome to Our Shop]" << endl;
+	system("cls");
 	
 	while (stop != 'Y' && stop != 'y')
 	{
 		catalog();
-		decision();
+		decision(i);
 		cout << "Do you want to proceed to checkout or continue browsing? (Y-checkout / N-continue) : ";
 		cin >> stop;
 		cin.ignore();
 		system("CLS");
+	}
+	
+	for (int X = 0; X < 30; X++)
+	{
+		cout << "cart [" << X << "] : " << cart[X] << endl;
 	}
 
 	return 0;
