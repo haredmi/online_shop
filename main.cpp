@@ -11,7 +11,7 @@ int ASB[5] = {0}, stockASB[5] = {1, 1, 1, 1, 1}, ASZ[5] = {0}, stockASZ[5] = {1,
 	NFF[5] = {0}, stockNFF[5] = {1, 1, 1, 1, 1}, PPL[5] = {0}, stockPPL[5] = {1, 1, 1, 1, 1}, PSC[5] = {0}, stockPSC[5] = {1, 1, 1, 1, 1}, PSD[5] = {0}, stockPSD[5] = {1, 1, 1, 1, 1}, ANC[5] = {0}, stockANC[5] = {1, 1, 1, 1, 1}, 
 	AKH[5] = {0}, stockAKH[5] = {1, 1, 1, 1, 1}, AKY[5] = {0}, stockAKY[5] = {1, 1, 1, 1, 1}, ANB[5] = {0}, stockANB[3] = {1, 1, 1};
 string cart[30];
-float total = 0;
+
 
 void decision(int &i)
 {
@@ -19,6 +19,7 @@ void decision(int &i)
 	char decision;
 	
 	cout << "Enter code (\'S\' if you did not interested) : ";
+	getline (cin, code);
   
 	while (code != "ASB1" && code != "ASB2" && code != "ASB3" && code != "ASB4" && code != "ASB5" && code != "ASZ1" && code != "ASZ2" && code != "ASZ3" && code != "ASZ4" && code != "ASZ5" 
 	&& code != "s" && code != "S")
@@ -112,13 +113,7 @@ void decision(int &i)
 			}
 	
 	}
-	else
-	{
-		cout << "No item added to cart. " << endl << endl << endl << endl;
-	}
-	
-	
-	if (code == "ASZ1")
+	else if (code == "ASZ1")
 	{
 			
 			if (stockASZ[0] == 0)
@@ -203,12 +198,7 @@ void decision(int &i)
 			}
 	
 	}
-	else
-	{
-		cout << "No item added to cart. " << endl << endl << endl << endl;
-	}
-	
-		if (code == "ASS1")
+	else if (code == "ASS1")
 	{
 			
 			if (stockASS[0] == 0)
@@ -240,12 +230,7 @@ void decision(int &i)
 				i++;
 			}
 	}
-		else
-	{
-		cout << "No item added to cart. " << endl << endl << endl << endl;
-	}
-	
-		if (code == "ACP1")
+	else if (code == "ACP1")
 	{
 			
 			if (stockACP[0] == 0)
@@ -296,12 +281,7 @@ void decision(int &i)
 			}
 	
 	}
-	else
-	{
-		cout << "No item added to cart. " << endl << endl << endl << endl;
-	}
-	
-	if (code == "AGZ1")
+	else if (code == "AGZ1")
 	{
 			
 			if (stockAGZ[0] == 0)
@@ -333,9 +313,7 @@ void decision(int &i)
 				cart[i] = "AGZ2";
 				i++;
 			}
-	}
-
-	if (code == "AGZ3")
+	}else if (code == "AGZ3")
 	{
 			
 			if (stockAGZ[0] == 0)
@@ -386,12 +364,7 @@ void decision(int &i)
 			}
 	
 	}
-	else
-	{
-		cout << "No item added to cart. " << endl << endl << endl << endl;
-  }
-
-		if (code == "NSR1")
+	else if (code == "NSR1")
 	{
 			
 			if (stockNSR[0] == 0)
@@ -424,8 +397,7 @@ void decision(int &i)
 				i++;
 			}
 	}
-
-	if (code == "NSR3")
+	else if (code == "NSR3")
 	{
 			
 			if (stockNSR[0] == 0)
@@ -459,12 +431,7 @@ void decision(int &i)
 			}
 	
 	}
-	else
-	{
-		cout << "No item added to cart. " << endl << endl << endl << endl;
-	}
-
-		if (code == "NTH1")
+	else if (code == "NTH1")
 	{
 			
 			if (stockNTH[0] == 0)
@@ -497,8 +464,7 @@ void decision(int &i)
 				i++;
 			}
 	}
-
-	if (code == "NTH3")
+	else if (code == "NTH3")
 	{
 			
 			if (stockNTH[0] == 0)
@@ -549,12 +515,7 @@ void decision(int &i)
 			}
 	
 	}
-	else
-	{
-		cout << "No item added to cart. " << endl << endl << endl << endl;
-	}
-	
-	if (code == "NZR1")
+	else if (code == "NZR1")
 	{
 			
 			if (stockNZR[0] == 0)
@@ -587,8 +548,7 @@ void decision(int &i)
 				i++;
 			}
 	}
-
-	if (code == "NZR3")
+	else if (code == "NZR3")
 	{
 			
 			if (stockNZR[0] == 0)
@@ -639,12 +599,7 @@ void decision(int &i)
 			}
 	
 	}
-	else
-	{
-		cout << "No item added to cart. " << endl << endl << endl << endl;
-	}
-	
-	if (code == "NSS1")
+	else if (code == "NSS1")
 	{
 			
 			if (stockNSS[0] == 0)
@@ -677,8 +632,7 @@ void decision(int &i)
 				i++;
 			}
 	}
-
-	if (code == "NSS3")
+	else if (code == "NSS3")
 	{
 			
 			if (stockNSS[0] == 0)
@@ -729,12 +683,7 @@ void decision(int &i)
 			}
 	
 	}
-	else
-	{
-		cout << "No item added to cart. " << endl << endl << endl << endl;
-	}
-
-		if (code == "NFF1")
+	else if (code == "NFF1")
 	{
 			
 			if (stockNFF[0] == 0)
@@ -767,8 +716,7 @@ void decision(int &i)
 				i++;
 			}
 	}
-
-	if (code == "NFF3")
+	else if (code == "NFF3")
 	{
 			
 			if (stockNFF[0] == 0)
@@ -819,12 +767,7 @@ void decision(int &i)
 			}
 	
 	}
-	else
-	{
-		cout << "No item added to cart. " << endl << endl << endl << endl;
-	}
-	
-	if (code == "PPL1")
+	else if (code == "PPL1")
 	{
 			
 			if (stockPPL[0] == 0)
@@ -857,8 +800,7 @@ void decision(int &i)
 				i++;
 			}
 	}
-
-	if (code == "PPL3")
+	else if (code == "PPL3")
 	{
 			
 			if (stockPPL[0] == 0)
@@ -909,12 +851,7 @@ void decision(int &i)
 			}
 	
 	}
-	else
-	{
-		cout << "No item added to cart. " << endl << endl << endl << endl;
-	}
-	
-		if (code == "PSC1")
+	else if (code == "PSC1")
 	{
 			
 			if (stockPSC[0] == 0)
@@ -947,8 +884,7 @@ void decision(int &i)
 				i++;
 			}
 	}
-
-	if (code == "PSC3")
+	else if (code == "PSC3")
 	{
 			
 			if (stockPSC[0] == 0)
@@ -999,12 +935,7 @@ void decision(int &i)
 			}
 	
 	}
-	else
-	{
-		cout << "No item added to cart. " << endl << endl << endl << endl;
-	}
-	
-		if (code == "PSD1")
+	else if (code == "PSD1")
 	{
 			
 			if (stockPSD[0] == 0)
@@ -1037,8 +968,7 @@ void decision(int &i)
 				i++;
 			}
 	}
-
-	if (code == "PSD3")
+	else if (code == "PSD3")
 	{
 			
 			if (stockPSD[0] == 0)
@@ -1089,12 +1019,7 @@ void decision(int &i)
 			}
 	
 	}
-	else
-	{
-		cout << "No item added to cart. " << endl << endl << endl << endl;
-	}
-	
-		if (code == "ANC1")
+	else if (code == "ANC1")
 	{
 			
 			if (stockANC[0] == 0)
@@ -1127,7 +1052,7 @@ void decision(int &i)
 				i++;
 			}
 	}
-  else if (code == "ANC3")
+	else if (code == "ANC3")
 	{
 			
 			if (stockANC[0] == 0)
@@ -1178,12 +1103,7 @@ void decision(int &i)
 			}
 	
 	}
-	else
-	{
-		cout << "No item added to cart. " << endl << endl << endl << endl;
-	}
-	
-	if (code == "AKH1")
+	else if (code == "AKH1")
 	{
 			
 			if (stockAKH[0] == 0)
@@ -1215,7 +1135,8 @@ void decision(int &i)
 				cart[i] = "AKH2";
 				i++;
 			}
-  }
+			
+	}
 	else if (code == "AKH3")
 	{
 			
@@ -1267,12 +1188,7 @@ void decision(int &i)
 			}
 	
 	}
-	else
-	{
-		cout << "No item added to cart. " << endl << endl << endl << endl;
-	}
-	
-		if (code == "AKY1")
+	else if (code == "AKY1")
 	{
 			
 			if (stockAKY[0] == 0)
@@ -1356,12 +1272,7 @@ void decision(int &i)
 			}
 	
 	}
-	else
-	{
-		cout << "No item added to cart. " << endl << endl << endl << endl;
-	}
-	
-		if (code == "ANB1")
+	else if (code == "ANB1")
 	{
 			
 			if (stockANB[0] == 0)
@@ -1394,7 +1305,7 @@ void decision(int &i)
 				i++;
 			}
 	}
-  else if (code == "ANB3")
+	else if (code == "ANB3")
 	{
 			
 			if (stockANB[0] == 0)
@@ -1415,6 +1326,7 @@ void decision(int &i)
 	{
 		cout << "No item added to cart. " << endl << endl << endl << endl;
 	}
+	
 }
 	
 void catalog()
@@ -1557,8 +1469,7 @@ void catalog()
 			cout << left << setfill ('-') << setw (46) << " " << endl;
 		}	
 	}
-	
-	if (brand == "NEWBALANCE" || brand == "newbalance" || brand == "new balance" || brand == "NEW BALANCE" || brand == "New Balance")
+	else if (brand == "NEWBALANCE" || brand == "newbalance" || brand == "new balance" || brand == "NEW BALANCE" || brand == "New Balance")
 	{
 		cout << "\nWhat nike's shoes you want to buy?";
 		cout << " \n\nEnter nike's shoes (1906R, 327, , 2002R, 9060, 550): ";
@@ -1631,8 +1542,7 @@ void catalog()
 			cout << left << setfill ('-') << setw (46) << " " << endl;
 		}	
 	}
-	
-	if (brand == "PUMA" || brand == "Puma" || brand == "puma")
+	else if (brand == "PUMA" || brand == "Puma" || brand == "puma")
 	{
 		cout << "\nWhat nike's shoes you want to buy?";
 		cout << " \n\nEnter puma's shoes (PALERMO, SPEEDCAT, SUEDE): ";
@@ -1701,14 +1611,14 @@ void date()
   cout << ctime(&timestamp);
 }
 
-void totalAmount()
+float totalAmount(float total)
 {
 	for (int i=0; i<17; i++)
 	{
 		
 		if(cart[i] == "ASB1" || cart[i] == "ASB2" || cart[i] == "ASB3" || cart[i] == "ASB4" || cart[i] == "ASB5")
 		{
-			total += 229.99;
+			total += 299.99;
 		}
 		else if(cart[i] == "ASZ1" || cart[i] == "ASZ2" || cart[i] == "ASZ3" || cart[i] == "ASZ4" || cart[i] == "ASZ5")
 		{
@@ -1777,9 +1687,11 @@ void totalAmount()
 		
 	}
 	
+	return total;
+	
 }
 
-void invoice(string name, string street, string neighborhood, string code, string state, string contact, string city)
+void invoice(string name, string street, string neighborhood, string code, string state, string contact, string city, float total)
 {
 	cout << setfill(' ') << setw(40) << ' ' << "SHOE THRIFT SHOP SDN BHD" << endl;
 	cout << setw(40) << ' ' << "No. 15, Jalan Bukit Bintang, Bukit Bintang, " << endl;
@@ -1820,11 +1732,11 @@ void invoice(string name, string street, string neighborhood, string code, strin
 	cout << setw(50) << "\n\n\nAuthorised signature" << setw(25) << "Received by";
 }
 
-
 int main() 
 {
 	string user, pass, address, contact, street, neighborhood, city, state, code;
 	int stop, i = 0;
+	float total = 0, amount;
 	
 	cout << " -------------------------------------------- " << endl;
 	cout << "|         Welcome to Shoe Thrift Shop.       |" << endl;
@@ -1869,7 +1781,6 @@ int main()
 		catalog();
 		decision(i);
 		cout << " ------------------------ " << endl;
-		
 		cout << "| [1] checkout           |" << endl;
 		cout << "| [2] continue browsing  |" << endl;
 		cout << " ------------------------ " << endl << endl;
@@ -1884,10 +1795,12 @@ int main()
 		cout << "cart [" << X << "] : " << cart[X] << endl;
 	}
 	
+	amount = totalAmount(total);
+	
 	system("pause");
 	system("cls");
 	
-	invoice(user, street, neighborhood, code, state, contact, city);
+	invoice(user, street, neighborhood, code, state, contact, city, amount);
 
 	return 0;
 }
